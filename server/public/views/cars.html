@@ -1,0 +1,66 @@
+<h1>Cars Page</h1>
+<div>{{vm.message}}</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Edit</th>
+            <th>Year</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Nickname</th>
+            <th>Country</th>
+            <th>X</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="car in vm.cars.list">
+        <tr>
+            <td>
+                <button ng-click="vm.toggleEditField(car.id)">Edit</button>
+            </td>
+            <td>{{car.year}}</td>
+            <td>{{car.name}}</td>
+            <td>{{car.model}}</td>
+            <td>{{car.nickname}}</td>
+            <td>{{car.country}}</td>
+            <td>
+                <button ng-click="vm.deleteCar(car.id)">X</button>
+            </td>
+        </tr>
+        {{car.displayedit}}
+        <tr ng-if="car.displayedit">
+            <td><button ng-click="vm.editCar(car.id)">Save</button></td>
+            <td>
+                <input type="number" ng-model="car.year" placeholder="year">
+            </td>
+            <td>
+                <select ng-options="company.id as company.name for company in vm.companies.list track by company.id" ng-model="car.company_id">
+                </select>
+            </td>
+            <td>
+                <input type="text" ng-model="car.model" placeholder="model">
+            </td>
+            <td>
+                <input type="text" ng-model="car.nickname" placeholder="nickname">
+            </td>
+            <td>Based on Make</td>
+            <td>
+                
+            </td>
+        </tr>
+
+
+        </tr>
+    </tbody>
+
+    <div>
+        <input type="number" ng-model="vm.newCar.year" placeholder="year">
+        <input type="text" ng-model="vm.newCar.model" placeholder="model">
+        <input type="text" ng-model="vm.newCar.nickname" placeholder="nickname">
+        <select ng-options="company.id as company.name for company in vm.companies.list track by company.id" ng-model="vm.newCar.company_id">
+        </select>
+        {{vm.newCar}}
+        <button ng-click="vm.addCar(vm.newCar)">submit</button>
+        <div>{{vm.companies.list}}</div>
+    </div>
+</table>

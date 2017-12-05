@@ -1,12 +1,12 @@
-var myApp = angular.module('MyApp', ['ngRoute']);
+var app = angular.module('MyApp', ['ngRoute']);
 
-myApp.config(function($routeProvider) {
+app.config(function($routeProvider) {
     $routeProvider.when('/', {
-        templateUrl: '/views/home.html',
-        controller: 'HomeController as vm'
+        templateUrl: '/views/company.html',
+        controller: 'CompanyController as vm'
     }).when('/about', {
-        templateUrl: '/views/about.html',
-        controller: 'AboutController as vm'
+        templateUrl: '/views/cars.html',
+        controller: 'CarController as vm'
     }).when('/home', {
         redirectTo: '/'
     }).otherwise({
@@ -19,12 +19,4 @@ myApp.config(function($routeProvider) {
 //     self.myMessage = 'This is my message to me!';
 // });
 
-myApp.controller('HomeController', function(){
-    var self = this;
-    self.message = 'What up homie??';
-});
 
-myApp.controller('AboutController', function(){
-    var self = this;
-    self.message = 'What about them tacos??';
-});
