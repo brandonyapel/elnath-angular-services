@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular Router Intro</title>
+    <script src="vendors/angular/angular.js"></script>
+    <script src="vendors/angular-route/angular-route.js"></script>
+    <script src="scripts/client.js"></script>
+    <!-- controllers -->
+    <script src="scripts/controllers/car.controller.js"></script>
+    <script src="scripts/controllers/companies.controller.js"></script>
+
+    <!-- services -->
+    
+    
+</head>
+<body ng-app="MyApp">
+    <h1>Angular Router Intro</h1>
+    {{7 + 8}}
+    {{vm.myMessage}}
+
+    <a href="#!">Companies</a>
+    <a href="#!about">Cars</a>
+    <a href="https://www.google.com" target="_blank">Google</a>
+    <ng-view></ng-view>
+</body>
+</html>
